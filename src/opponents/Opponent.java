@@ -1,10 +1,10 @@
 package opponents;
 
-public abstract class opponents {
+public abstract class Opponent {
 
 	private String name;
 	
-	public opponents(String name){
+	public Opponent(String name){
 		this.setName(name);
 	}
 	

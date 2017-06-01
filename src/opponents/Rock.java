@@ -8,9 +8,9 @@ package opponents;
 
 import java.util.Random;
 
-public class cut extends opponents {
-	
-	public cut(String name) {
+public class Rock extends Opponent {
+
+	public Rock(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
@@ -20,13 +20,16 @@ public class cut extends opponents {
 		int move = 0;
 		Random movePicker = new Random(100);
 		int decider = movePicker.nextInt();
-		if(decider < 50){
+		
+		if(decider < 60){
+			move = 2;
+		}
+		else if(decider >= 60 && decider < 95){
 			move = 1;
 		}
-		else if(decider < 90 && decider >= 50){
+		else{
 			move = 3;
 		}
-		
 		return move;
 	}
 
