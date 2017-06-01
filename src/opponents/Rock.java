@@ -1,8 +1,9 @@
 /*
- * 1 = sisciors
- * 2 = rock
- * 3 = paper
+ * 1 = rock
+ * 2 = paper
+ * 3 = scissors
  */
+
 
 package opponents;
 
@@ -16,7 +17,7 @@ public class Rock extends Opponent {
 	}
 
 	@Override
-	int move() {
+	public int move() {
 		int move = 0;
 		Random movePicker = new Random(100);
 		int decider = movePicker.nextInt();

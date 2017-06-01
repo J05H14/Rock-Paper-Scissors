@@ -1,7 +1,7 @@
 /*
- * 1 = sisciors
- * 2 = rock
- * 3 = paper
+ * 1 = rock
+ * 2 = paper
+ * 3 = scissors
  */
 
 package opponents;
@@ -15,22 +15,22 @@ public class Scissors extends Opponent {
 		// TODO Auto-generated constructor stub
 	}
 
+	public int move(){
+		return move(0.10, 0.40, 0.50);
+	}
 	@Override
-	int move() {
-		int move = 0;
-		Random movePicker = new Random(100);
-		int decider = movePicker.nextInt();
-		if(decider < 50){
-			move = 1;
+	protected int move(double rockOdds, double paperOdds, double scissorsOdds) {
+		if(this.decider.nextDouble() < rockOdds){
+			return 1;
 		}
-		else if(decider < 90 && decider >= 50){
-			move = 3;
+		else if(this.decider.nextDouble() >= rockOdds && this.decider.nextDouble() < (1 - scissorsOdds)){
+			return 2;
 		}
 		else{
-			move = 2;
+			return 3;
 		}
 		
-		return move;
 	}
+
 
 }
