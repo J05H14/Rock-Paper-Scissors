@@ -6,8 +6,6 @@
 
 package opponents;
 
-import java.util.Random;
-
 public class Scissors extends Opponent {
 	
 	public Scissors(String name) {

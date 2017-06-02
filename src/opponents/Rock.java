@@ -7,8 +7,6 @@
 
 package opponents;
 
-import java.util.Random;
-
 public class Rock extends Opponent {
 
 	public Rock(String name) {
@@ -16,22 +14,22 @@ public class Rock extends Opponent {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public int move() {
-		int move = 0;
-		Random movePicker = new Random(100);
-		int decider = movePicker.nextInt();
+	public int move(){
+		return move(0.60, 0.05, 0.35);
 		
-		if(decider < 60){
-			move = 2;
+	}
+	
+	@Override
+	public int move(double rockOdds, double paperOdds, double scissorsOdds) {
+		if(this.decider.nextDouble() < rockOdds){
+			return 1;
 		}
-		else if(decider >= 60 && decider < 95){
-			move = 1;
+		else if(this.decider.nextDouble() >= rockOdds && this.decider.nextDouble() < (1 - scissorsOdds)){
+			return 2;
 		}
 		else{
-			move = 3;
+			return 3;
 		}
-		return move;
 	}
 
 }

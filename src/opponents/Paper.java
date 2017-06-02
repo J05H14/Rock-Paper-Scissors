@@ -15,23 +15,22 @@ public class Paper extends Opponent {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public int move(){
+		return move(0.35, 0.50, 0.15);
+	}
 
 	@Override
-	public int move() {
-		int move = 0;
-		Random movePicker = new Random(100);
-		int decider = movePicker.nextInt();
-		
-		if(decider < 50){
-			move = 3;
+	public int move(double rockOdds, double paperOdds, double scissorsOdds) {
+		if(this.decider.nextDouble() < rockOdds){
+			return 1;
 		}
-		else if(decider >= 50 && decider < 85){
-			move = 2;
+		else if(this.decider.nextDouble() >= rockOdds && this.decider.nextDouble() < (1 - scissorsOdds)){
+			return 2;
 		}
 		else{
-			move = 1;
+			return 3;
 		}
-		return move;
 	}
 
 }
