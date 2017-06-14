@@ -7,8 +7,6 @@
 
 package opponents;
 
-import java.util.Random;
-
 public class Paper extends Opponent {
 
 	public Paper(String name) {

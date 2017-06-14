@@ -10,12 +10,7 @@ public class Impossible extends Opponent {
 	public int move(int playerMove){
 		return playerMove(playerMove);
 	}
-
-	private int playerMove(int playerMove) {
-		// TODO Auto-generated method stub
-		return playerMove;
-	}
-
+	
 	@Override
 	protected int move(double rockOdds, double paperOdds, double scissorsOdds) {
 		return 0;
