@@ -7,8 +7,8 @@ public class Impossible extends Opponent {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public int move(int playerMove){
-		return playerMove(playerMove);
+	public int move(){
+		return 0;
 	}
 	
 	@Override

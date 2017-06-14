@@ -17,6 +17,12 @@ public class RockPaperScissors {
 
 	public String match(int playerMove) throws Exception{
 		int oppMove = this.opponent.move();
+		
+		//vs impossible
+		if(oppMove == 0){
+			oppMove = playerMove;
+			return "Draw";
+		}
 		//player - rock
 		if(playerMove == 1){
 			if(oppMove == 3){
